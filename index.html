@@ -964,6 +964,192 @@
         color: #ffffff;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        background: #f6f7f9;
+        color: #172033;
+    }
+
+    .feature-section {
+        width: min(1440px, calc(100% - 40px));
+        margin: 60px auto;
+    }
+
+    /* Header */
+
+    .feature-header {
+        max-width: 900px;
+        margin-bottom: 40px;
+    }
+
+    .feature-label {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: #c73b2d;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    .feature-header h2 {
+        margin: 0 0 18px;
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+        color: #172033;
+    }
+
+    .feature-header p {
+        max-width: 850px;
+        margin: 0;
+        color: #667085;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    /* Showcase */
+
+    .feature-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 28px;
+        align-items: center;
+    }
+
+    /* Screenshot */
+
+    .screenshot-wrapper {
+        position: relative;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        box-shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
+    }
+
+    .screenshot-wrapper img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Screenshot Markers */
+
+    .marker {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        color: #ffffff;
+        background: #c73b2d;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        font-size: 13px;
+        font-weight: 700;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .marker-1 {
+        top: 29%;
+        left: 50%;
+    }
+
+    .marker-2 {
+        top: 57%;
+        left: 49%;
+    }
+
+    /* Annotations */
+
+    .annotation-list {
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+    }
+
+    .annotation-card {
+        position: relative;
+        display: flex;
+        gap: 12px;
+        padding: 18px;
+        background: #ffffff;
+        border: 1px solid #dfe3e8;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(16, 24, 40, 0.05);
+    }
+
+    .annotation-number {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-left: -30px;
+        color: #ffffff;
+        background: #c73b2d;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .annotation-card h3 {
+        margin: 0 0 5px;
+        font-size: 15px;
+        color: #172033;
+    }
+
+    .annotation-card p {
+        margin: 0;
+        color: #667085;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+        .feature-section {
+            width: min(100% - 24px, 700px);
+            margin: 40px auto;
+        }
+
+        .feature-showcase {
+            grid-template-columns: 1fr;
+        }
+
+        .annotation-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .annotation-number {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .feature-header h2 {
+            font-size: 30px;
+        }
+
+        .feature-header p {
+            font-size: 15px;
+        }
+
+        .annotation-list {
+            grid-template-columns: 1fr;
+        }
+    }
+
     /* Address */
     .footer-address {
         font-family: var(--font-body);
@@ -1383,6 +1569,59 @@
                 <a href="https://techstorypro.appexperts.us" class="btn btn-primary" style="padding: 0 3rem;"
                     target="_blank">Launch Live App Demo</a> -->
             </div>
+            <section class="feature-section">
+                <div class="feature-header">
+                    <span class="feature-label">CORE WORKFLOW</span>
+
+                    <h2>REPAIR SEARCH + INSTANT STORY GENERATION</h2>
+
+                    <p>
+                        The most common workflow starts with the technician searching the repair
+                        database. They type any keyword - "engine", "brakes", "coolant" - and the
+                        system returns matching pre-built repair templates instantly. Selecting
+                        one triggers the full AI story generation flow.
+                    </p>
+                </div>
+
+                <div class="feature-showcase">
+                    <!-- Screenshot Area -->
+                    <div class="screenshot-wrapper">
+                        <img src="your-repair-search-image.png"
+                            alt="Repair search and instant story generation interface" />
+
+                        <!-- Screenshot Markers -->
+                        <span class="marker marker-1">1</span>
+                        <span class="marker marker-2">2</span>
+                    </div>
+
+                    <!-- Annotation Cards -->
+                    <div class="annotation-list">
+                        <div class="annotation-card">
+                            <span class="annotation-number">1</span>
+
+                            <div>
+                                <h3>Keyword Search</h3>
+                                <p>
+                                    Type any repair keyword. System shows matching templates instantly
+                                    from the database.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="annotation-card">
+                            <span class="annotation-number">2</span>
+
+                            <div>
+                                <h3>Selected Template</h3>
+                                <p>
+                                    Highlighted row shows chosen repair. One click loads the full AI
+                                    story flow.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>
 
